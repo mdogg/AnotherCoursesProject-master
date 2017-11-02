@@ -15,7 +15,8 @@ using Android.Support.V4.View;
 
 namespace AnotherCoursesProjectAndroid
 {
-    [Activity(Label = "Courses", MainLauncher = true, Icon = "@drawable/icon")]
+    //[Activity(Label = "Courses", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Courses Activity")]
     public class CourseActivity : FragmentActivity
     {
         CourseManager courseManager;
