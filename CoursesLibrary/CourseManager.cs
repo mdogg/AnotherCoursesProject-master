@@ -8,49 +8,169 @@ namespace CoursesLibrary
 {
     public class CourseManager
     {
-        private readonly Course[] courses;
+        private const String DefaultCategory = "Android";
 
+        private readonly Course[] courses;
         int currentIndex = 0;
         private readonly int lastIndex;
 
-        public CourseManager()
+       public CourseManager() : this(DefaultCategory) { }
+
+        //public CourseManager()
+        //{
+        //    //courses = InitCourses();
+        //    //lastIndex = courses.Length - 1;
+        //    : this(DefaultCategory){ }
+        //}
+
+        public CourseManager(String categoryTitle)
         {
-            courses = InitCourses();
-            lastIndex = courses.Length - 1;
+            switch (categoryTitle)
+            {
+                case "Android":
+                    courses = InitCourseAndroid();
+                    break;
+                case "iOS":
+                    courses = InitCourseAndroid();
+                    break;
+                case "Windows Phone":
+                    courses = InitCourseAndroid();
+                    break;
+            }
+            if(courses != null)
+            {
+                lastIndex = courses.Length - 1;
+            }
         }
 
-        private Course[] InitCourses()
+        private Course[] InitCourseAndroid()
         {
-            var initCourses = new Course[] {
+            var initCourses = new Course[]
+            {
                 new Course()
                 {
-                    Title = "Martin's Course",
+                    Title = "Martin's Course Android",
                     Description = "Martin will lead this course",
                     Image = "member04_on"
                 },
                 new Course()
                 {
-                    Title = "John's Course",
+                    Title = "John's Course Android",
                     Description = "John will lead this course",
                     Image = "member03_on"
                 },
                 new Course()
                 {
-                    Title = "Alick's Course",
+                    Title = "Alick's Course Android",
                     Description = "Alick will lead this course",
                     Image = "member02_on"
                 },
                 new Course()
                 {
-                    Title = "Ev's Course",
+                    Title = "Ev's Course Android",
                     Description = "Ev will lead this course",
                     Image = "member01_on"
                 }
             };
-
             return initCourses;
-
         }
+
+        private Course[] InitCourseiOS()
+        {
+            var initCourses = new Course[]
+            {
+                new Course()
+                {
+                    Title = "Martin's Course iOS",
+                    Description = "Martin will lead this course",
+                    Image = "member04_on"
+                },
+                new Course()
+                {
+                    Title = "John's Course iOS",
+                    Description = "John will lead this course",
+                    Image = "member03_on"
+                },
+                new Course()
+                {
+                    Title = "Alick's Course iOS",
+                    Description = "Alick will lead this course",
+                    Image = "member02_on"
+                },
+                new Course()
+                {
+                    Title = "Ev's Course iOS",
+                    Description = "Ev will lead this course",
+                    Image = "member01_on"
+                }
+            };
+            return initCourses;
+        }
+
+        private Course[] InitCourseWindows()
+        {
+            var initCourses = new Course[]
+            {
+                new Course()
+                {
+                    Title = "Martin's Course Windows",
+                    Description = "Martin will lead this course",
+                    Image = "member04_on"
+                },
+                new Course()
+                {
+                    Title = "John's Course Windows",
+                    Description = "John will lead this course",
+                    Image = "member03_on"
+                },
+                new Course()
+                {
+                    Title = "Alick's Course Windows",
+                    Description = "Alick will lead this course",
+                    Image = "member02_on"
+                },
+                new Course()
+                {
+                    Title = "Ev's Course Windows",
+                    Description = "Ev will lead this course",
+                    Image = "member01_on"
+                }
+            };
+            return initCourses;
+        }
+
+        //private Course[] InitCourses()
+        //{
+        //    var initCourses = new Course[] {
+        //        new Course()
+        //        {
+        //            Title = "Martin's Course",
+        //            Description = "Martin will lead this course",
+        //            Image = "member04_on"
+        //        },
+        //        new Course()
+        //        {
+        //            Title = "John's Course",
+        //            Description = "John will lead this course",
+        //            Image = "member03_on"
+        //        },
+        //        new Course()
+        //        {
+        //            Title = "Alick's Course",
+        //            Description = "Alick will lead this course",
+        //            Image = "member02_on"
+        //        },
+        //        new Course()
+        //        {
+        //            Title = "Ev's Course",
+        //            Description = "Ev will lead this course",
+        //            Image = "member01_on"
+        //        }
+        //    };
+
+        //    return initCourses;
+
+        //}
 
         public int Length
         {

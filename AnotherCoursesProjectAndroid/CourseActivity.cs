@@ -19,6 +19,7 @@ namespace AnotherCoursesProjectAndroid
     [Activity(Label = "Courses Activity")]
     public class CourseActivity : FragmentActivity
     {
+        private const String DEFAULT_CATEGORY_TITLE = "Android";
         CourseManager courseManager;
         CoursePagerAdapter coursePagerAdapter;
         ViewPager viewPager;
